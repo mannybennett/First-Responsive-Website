@@ -10,36 +10,6 @@ body {
     display: grid;
 }
 
-@media(min-width: 577px) {
-    .container {
-       display: grid;
-       grid-template-columns: auto;
-       grid-template-rows: 1fr 1fr;
-       grid-template-areas:
-         "header"
-         "footer"
-    }
-
-    .fcont {
-        background-color: #1B1A1A;
-    }
-}
-
-@media(max-width: 576px) {
-    .container {
-      display: grid;
-      grid-template-columns: auto;
-      grid-template-rows: 30% 70%;
-      grid-template-areas:
-        "header"
-        "footer"
-    }
-
-    .fcont {
-        background-color: white;
-    }
-}
-
 header {
     background-color: #2BCFC1;
     grid-area: header;
@@ -53,9 +23,6 @@ header {
     color: white;
     font-size: 5em;
     word-spacing: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 footer {
@@ -63,43 +30,145 @@ footer {
 }
 
 .blocks {
-    display: grid;
-    grid-template-columns: 50px 1fr 1fr 1fr 50px;
-    justify-content: center;
-    /* display: flex;
+    display: flex;
     justify-content: space-evenly;
-    padding-top: 7em; */
-}
-.text {
-    /* display: flex;
-    justify-content: space-evenly;
-    padding: ; */
+    align-items: center;
 }
 
-h2 {
+.cards > h1 {
     font-family: 'Bitter', serif;
-    font-size: 3em;
-    color: white;
-    letter-spacing: 2px;
+    font-size: 3.5em;
+    letter-spacing: 3px;
+    margin-bottom: 5%;
 }
 
-#block1 {
-    grid-column: 2/3;
-    background-color: #32A8DC;
-    width: 17vw;
-    height: 3vh;
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
 }
 
-#block2 {
-    grid-column: 3/4;
-    background-color: #F56931;
-    width: 17vw;
-    height: 3vh;
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-size: 1.1em;
 }
 
-#block3 {
-    grid-column: 4/5;
-    background-color: #2BCFC1;
-    width: 17vw;
-    height: 3vh;
-}
+    @media(min-width: 577px) {
+        .container {
+           display: grid;
+           grid-template-columns: auto;
+           grid-template-rows: 1fr 1fr;
+           grid-template-areas:
+             "header"
+             "footer"
+        }
+    
+        .fcont {
+            background-color: #1B1A1A;
+        }
+
+        section {
+            margin: 40% 0 4% 0;
+        }
+    
+        .blocks {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+    
+        #block1 {
+            grid-column: 2/3;
+            background-color: #32A8DC;
+            width: 20vw;
+            height: 3vh;
+        }
+        
+        #block2 {
+            grid-column: 3/4;
+            background-color: #F56931;
+            width: 20vw;
+            height: 3vh;
+        }
+        
+        #block3 {
+            grid-column: 4/5;
+            background-color: #2BCFC1;
+            width: 20vw;
+            height: 3vh;
+        }
+
+        .cards > h1 {
+            color: white;
+        }
+
+        .cards > p {
+            color: rgb(201, 201, 201);
+        }
+
+        .cards {
+            width: 19vw;
+        }
+    }
+    
+    @media(max-width: 576px) {
+        .container {
+          display: grid;
+          grid-template-columns: auto;
+          grid-template-rows: 30% 70%;
+          grid-template-areas:
+            "header"
+            "footer"
+        }
+    
+        .fcont {
+            background-color: white;
+        }
+
+        section {
+            margin-bottom: 4%;
+        }
+    
+        .blocks {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        #block1 {
+            grid-column: 2/3;
+            background-color: #32A8DC;
+            width: 40vw;
+            height: 3vh;
+        }
+        
+        #block2 {
+            grid-column: 3/4;
+            background-color: #F56931;
+            width: 40vw;
+            height: 3vh;
+        }
+        
+        #block3 {
+            grid-column: 4/5;
+            background-color: #2BCFC1;
+            width: 40vw;
+            height: 3vh;
+        }
+        
+        .cards > h1, p {
+            color: black;
+        }
+        
+        header {
+            text-align: center;
+        }
+        
+        .cards {
+            width: 40vw;
+            margin: 10% 0 0 0;
+        }
+    }
